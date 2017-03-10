@@ -1,0 +1,201 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+public class calcul extends Applet implements ActionListener
+{
+	TextField t1;
+	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,equal,plus,min,mul,div,clr;
+	double d1,d2;
+	int ch;
+	
+	public void actionPerformed(ActionEvent ae)
+	{
+		if(ae.getSource()==b1)
+		{
+			String s1 = t1.getText();
+			s1 = s1 + "1";
+			t1.setText(s1);
+		}
+		if(ae.getSource()==b2)
+		{
+			String s2 = t1.getText();
+			s2 = s2 + "2";
+			t1.setText(s2);
+		}
+		if(ae.getSource()==b3)
+		{
+			String s3 = t1.getText();
+			s3 = s3 + "3";
+			t1.setText(s3);
+		}
+		if(ae.getSource()==b4)
+		{
+			String s4 = t1.getText();
+			s4 = s4 + "4";
+			t1.setText(s4);
+		}
+		if(ae.getSource()==b5)
+		{
+			String s5 = t1.getText();
+			s5 = s5 + "5";
+			t1.setText(s5);
+		}
+		if(ae.getSource()==b6)
+		{
+			String s6 = t1.getText();
+			s6 = s6 + "6";
+			t1.setText(s6);
+		}
+		if(ae.getSource()==b7)
+		{
+			String s7 = t1.getText();
+			s7 = s7 + "7";
+			t1.setText(s7);
+		}
+		if(ae.getSource()==b8)
+		{
+			String s8 = t1.getText();
+			s8 = s8 + "8";
+			t1.setText(s8);
+		}
+		if(ae.getSource()==b9)
+		{
+			String s9 = t1.getText();
+			s9 = s9 + "9";
+			t1.setText(s9);
+		}
+		if(ae.getSource()==b0)
+		{
+			String s0 = t1.getText();
+			s0 = s0 + "0";
+			t1.setText(s0);
+		}
+		if(ae.getSource()==plus)
+		{
+			d1 = Double.parseDouble(t1.getText());
+			ch = 1;
+			t1.setText(" ");
+		}
+		if(ae.getSource()==min)
+		{
+			d1 = Double.parseDouble(t1.getText());
+			ch = 2;
+			t1.setText(" ");
+		}
+		if(ae.getSource()==div)
+		{
+			d1 = Double.parseDouble(t1.getText());
+			ch = 3;
+			t1.setText(" ");
+		}
+		if(ae.getSource()==mul)
+		{
+			d1 = Double.parseDouble(t1.getText());
+			ch = 4;
+			t1.setText(" ");
+		}
+		if(ae.getSource()==equal)
+		{
+			if(ch==1)
+			{
+			d2 = Double.parseDouble(t1.getText());
+			d1 = d1 + d2;
+			t1.setText(Double.toString(d1));	
+			}
+			if(ch==2)
+			{
+			d2 = Double.parseDouble(t1.getText());
+			d1 = d1 - d2;
+			t1.setText(Double.toString(d1));	
+			}
+			if(ch==3)
+			{
+			d2 = Double.parseDouble(t1.getText());
+			d1 = d1 / d2;
+			t1.setText(Double.toString(d1));	
+			}
+			if(ch==4)
+			{
+			d2 = Double.parseDouble(t1.getText());
+			d1 = d1 * d2;
+			t1.setText(Double.toString(d1));	
+			}
+			
+		}
+	}
+
+	public void init()
+	{
+		setLayout(null);
+		t1 = new TextField(20);
+		b1 = new Button("1");
+		b2 = new Button("2");
+		b3 = new Button("3");
+		b4 = new Button("4");
+		b5 = new Button("5");
+		b6 = new Button("6");
+		b7 = new Button("7");
+		b8 = new Button("8");
+		b9 = new Button("9");
+		b0 = new Button("0");
+		equal = new Button("=");
+		plus = new Button("+");
+		min = new Button("-");
+		mul = new Button("*");
+		div = new Button("/");
+		clr = new Button("clear");
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
+		b5.addActionListener(this);
+		b6.addActionListener(this);
+		b7.addActionListener(this);
+		b8.addActionListener(this);
+		b9.addActionListener(this);
+		b0.addActionListener(this);
+		plus.addActionListener(this);
+		mul.addActionListener(this);
+		equal.addActionListener(this);
+		div.addActionListener(this);
+		clr.addActionListener(this);
+
+
+		t1.setBounds(100,80,170,40);
+		add(t1);
+		b1.setBounds(100,120,40,40);
+		add(b1);
+		b2.setBounds(130,120,40,40);
+		add(b2);
+		b3.setBounds(160,120,40,40);
+		add(b3);
+		b4.setBounds(190,120,40,40);
+		add(b4);
+		b5.setBounds(100,150,40,40);
+		add(b5);
+		b6.setBounds(130,150,40,40);
+		add(b6);
+		b7.setBounds(160,150,40,40);
+		add(b7);
+		b8.setBounds(190,150,40,40);
+		add(b8);
+		b9.setBounds(100,180,40,40);
+		add(b9);
+		b0.setBounds(130,180,40,40);
+		
+		add(b0);
+		plus.setBounds(100,220,40,40);
+		add(plus);
+		min.setBounds(130,220,40,40);
+		add(min);
+		mul.setBounds(160,220,40,40);
+		add(mul);
+		div.setBounds(190,220,40,40);
+		add(div);
+		clr.setBounds(170,120,60,40);
+		add(clr);
+		equal.setBounds(220,120,40,140);
+		add(equal);
+	} 
+}
+/*<applet code = "calcul.java" width = 400 height=400></applet>*/
